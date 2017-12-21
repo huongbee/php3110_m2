@@ -27,19 +27,23 @@ if(isset($_POST['btnUpload'])){
     //rename file
     
     $size = $file['size'];
-    if($size>1024*1024){
+    if($size>5*1024*1024){
         echo "File too large! Choose another";
         die;
     }
     //a.png
     //a.jpeg
-    
-    echo pathinfo($name,PATHINFO_EXTENSION);
+    $ext = strtolower(pathinfo($name,PATHINFO_EXTENSION));
 
+    $arrExt = ['png', 'jpg', 'gif', 'jpeg'];
+    if(!in_array($ext,$arrExt)){
+        echo "File khong duoc phep chon";
+        die;
+    }
+    $newName = time().'-'.$name;
 
-
-    //move_uploaded_file($tmpName,"images/$name");
-    //echo "success";
+    move_uploaded_file($tmpName,"images/$newName");
+    echo "success";
 
 }
 
