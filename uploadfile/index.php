@@ -8,6 +8,12 @@
 </head>
 <body>
 <?php
+// echo date_default_timezone_get();
+// echo "<br>";
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+
+//echo date_default_timezone_get();
+
 if(isset($_POST['btnUpload'])){
 
     if($_FILES['image']['name']==''){
@@ -40,7 +46,8 @@ if(isset($_POST['btnUpload'])){
         echo "File khong duoc phep chon";
         die;
     }
-    $newName = time().'-'.$name;
+    //$newName = time().'-'.$name;
+    $newName = date('Y-m-d-H-i-s').'-'.$name;
 
     move_uploaded_file($tmpName,"images/$newName");
     echo "success";
