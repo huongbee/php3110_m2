@@ -3,27 +3,65 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
-CKEDITOR.editorConfig = function( config ) {
+CKEDITOR.editorConfig = function (config) {
+	config.language = 'vi';
+	//config.uiColor = '#00BCD4';
+
+	config.filebrowserBrowseUrl = 'ckfinder/ckfinder.html';
+	config.filebrowserImageBrowseUrl = 'ckfinder/ckfinder.html?type=Images';
+	config.filebrowserUploadUrl = 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+	config.filebrowserImageUploadUrl = 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+
 	// Define changes to default configuration here.
 	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
 	// The toolbar groups arrangement, optimized for two toolbar rows.
-	config.toolbarGroups = [
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-		{ name: 'links' },
-		{ name: 'insert' },
-		{ name: 'forms' },
-		{ name: 'tools' },
-		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		{ name: 'others' },
+	config.toolbarGroups = [{
+			name: 'clipboard',
+			groups: ['clipboard', 'undo']
+		},
+		{
+			name: 'editing',
+			groups: ['find', 'selection', 'spellchecker']
+		},
+		{
+			name: 'links'
+		},
+		{
+			name: 'insert'
+		},
+		{
+			name: 'forms'
+		},
+		{
+			name: 'tools'
+		},
+		{
+			name: 'document',
+			groups: ['mode', 'document', 'doctools']
+		},
+		{
+			name: 'others'
+		},
 		'/',
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-		{ name: 'styles' },
-		{ name: 'colors' },
-		{ name: 'about' }
+		{
+			name: 'basicstyles',
+			groups: ['basicstyles', 'cleanup']
+		},
+		{
+			name: 'paragraph',
+			groups: ['list', 'indent', 'blocks', 'align', 'bidi']
+		},
+		{
+			name: 'styles'
+		},
+		{
+			name: 'colors'
+		},
+		{
+			name: 'about'
+		}
 	];
 
 	// Remove some buttons provided by the standard plugins, which are
@@ -35,4 +73,6 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+
 };

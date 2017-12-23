@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckfinder/ckfinder.js"></script>
 </head>
 <body>
     <form>
-        <div class="form-group">
+        <div class="form-group" style="width:500px">
             <label for="comment">Comment:</label>
             <br>
             <textarea class="form-control" rows="5" id="comment" cols='50'></textarea>
