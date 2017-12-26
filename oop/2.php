@@ -72,14 +72,6 @@ class subCat extends Cat{
         return $this->name. " playing soccer";
     }
    // color, name, play, go, setName, getName
-
-}
-class Chihuahua extends subCat{
-    //color, name, play, go, setName, getName
-    // public function setName($name){
-    //     return $this->setName($name); //not action of Cat,  đệ quy
-    //     return self::setName($name);
-    // }
     public function setName($name){
         return parent::setName($name); // action of Cat
     }
@@ -87,8 +79,20 @@ class Chihuahua extends subCat{
         return parent::getName(); // action of Cat
     }
 }
+class Chihuahua extends subCat{
+    //color, name, play, go, setName, getName
+    // public function setName($name){
+    //     return $this->setName($name); //not action of Cat,  đệ quy
+    //     return self::setName($name);
+    // }
+    
+}
 
-$chi1 = new Chihuahua;
-$chi1->setName('HuaHua');
-echo $chi1->getName();
+// $chi1 = new Chihuahua;
+// $chi1->setName('HuaHua');
+// echo $chi1->getName();
+
+$cat1 = new subCat;
+$cat1->setName('King');
+echo $cat1->getName();
 ?>
