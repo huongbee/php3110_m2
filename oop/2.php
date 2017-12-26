@@ -76,8 +76,17 @@ class subCat extends Cat{
 }
 class Chihuahua extends subCat{
     //color, name, play, go, setName, getName
+    // public function setName($name){
+    //     return $this->setName($name); //not action of Cat,  đệ quy
+    //     return self::setName($name);
+    // }
+    public function setName($name){
+        return parent::setName($name); // action of Cat
+    }
+    public function getName(){
+        return parent::getName(); // action of Cat
+    }
 }
-
 
 $chi1 = new Chihuahua;
 $chi1->setName('HuaHua');
