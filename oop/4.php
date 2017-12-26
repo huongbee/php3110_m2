@@ -9,6 +9,9 @@ class SinhVien{
     function getName(){
         return SinhVien::$name;
     }
+    public function __construct(){
+
+    }
 }
 
 // $sv = new SinhVien;
