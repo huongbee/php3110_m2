@@ -78,3 +78,17 @@ FROM type_products t
 LEFT JOIN products p 
     ON p.id_type = t.id
 GROUP BY t.name
+
+SELECT t.name as tenloai, avg(p.unit_price) as DGTB
+FROM type_products t
+LEFT JOIN products p 
+    ON p.id_type = t.id
+GROUP BY t.name
+
+
+SELECT t.name as tenloai,sum(p.unit_price) as tongTien, count(p.id) as tongSP
+FROM type_products t
+LEFT JOIN products p 
+    ON p.id_type = t.id
+WHERE p.unit_price between 50000 and 100000
+GROUP BY t.name
