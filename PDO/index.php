@@ -121,10 +121,10 @@ else{
 //$stmt->prepare($sql)
 // $stmt->bindParam(....);
 // $stmt->execute();
-//$data = $stmt->fetchAll();
+//$data = $stmt->fetch();
 
 
-unset($dbh);
+//unset($dbh);
 //$dbh = NULL;
 
 $sql = "UPDATE customer SET name='Khoa Pham' WHERE";
